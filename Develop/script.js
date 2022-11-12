@@ -8,6 +8,15 @@
 - ****
 */
 
+function generatePassword(){
+  var lengthcheck = false
+  var userpassword = ""
+  var final_password = ""
+  var letters = ("abcdefghjklmnopqrstivnfdbn")
+  var uppercasletter = letters.toUpperCase()
+  var usernumbers = ("1234567890")
+  var special = ("!@#$%^&*()?")
+
 // Assignment code here
 
 

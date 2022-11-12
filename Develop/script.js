@@ -21,7 +21,7 @@ function generatePassword(){
  alert("Welcome to the strongest password generator out there! Please select what parameters you would like to includ in your pw and we will generate this for you. If you decide to leave please click cancel")
  while (lengthcheck == false){
    var password_length = prompt("how long do you want your password to be?")
-   if (isNaN(password_length) || password_length == null){
+   if (isNaN(password_length)){
      alert("That is not a number please try again")
      lengthcheck=false
    }
@@ -33,9 +33,19 @@ function generatePassword(){
      alert("Your pw meets the length criteria being " + password_length + " long")
      lengthcheck=true
    }
- }
+  }
+  //Prompt to ask the user if they want to include uppercase letters and save the response to a variable
+  uppercasechoice = prompt("Do you want uppercase letters?: ")
+    if (uppercasechoice.toUpperCase()=="NO" || uppercasechoice.toUpperCase()=="N"){
+      alert("You have chosen no upper case letters")
+    }
+    else if(uppercasechoice.toUpperCase()=="YES" || uppercasechoice.toUpperCase()=="Y"){
+      alert("Your password will be stronger for having CAPITALS!")
+      userpassword += uppercasletter
+    }
+  
 
-
+}//**closing function
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 

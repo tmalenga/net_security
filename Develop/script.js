@@ -34,7 +34,7 @@ function generatePassword(){
      lengthcheck=true
    }
   }
-  //Prompt to ask the user if they want to include uppercase letters and save the response to a variable
+  //Prompt to ask the user if they want to include uppercase letters and save the response to a variable, same for to ln 69
   uppercasechoice = prompt("Do you want uppercase letters?: ")
     if (uppercasechoice.toUpperCase()=="NO" || uppercasechoice.toUpperCase()=="N"){
       alert("You have chosen no upper case letters")
@@ -43,9 +43,33 @@ function generatePassword(){
       alert("Your password will be stronger for having CAPITALS!")
       userpassword += uppercasletter
     }
-  
+  lowercasechoice = prompt("Do you want lowerrcase letters?: ")
+    if (lowercasechoice.toUpperCase()=="NO" || lowercasechoice.toUpperCase()=="N" || lowercasechoice == null){
+      alert("You have chosen no lower case letters")
+    }
+    else if(lowercasechoice.toUpperCase()=="YES" || lowercasechoice.toUpperCase()=="Y"){
+      alert("Your password will be stronger for going looooooooowwwwwah!")
+      userpassword += letters
+    }
+  numbers = prompt("Do you want to include numbers?: ")
+    if (numbers.toUpperCase()=="NO" || numbers.toUpperCase()=="N"){
+      alert("You have chosen no numbers")
+    }
+    else if(numbers.toUpperCase()=="YES" || numbers.toUpperCase()=="Y"){
+      alert("A number a day keeps the hacker away :)")
+      userpassword += usernumbers
+    }
+  specialchars = prompt("Do you want to include special characters?: ")
+    if (specialchars.toUpperCase()=="NO" || specialchars.toUpperCase()=="N"){
+      alert("You have chosen no special people!!")
+    }
+    else if(specialchars.toUpperCase()=="YES" || specialchars.toUpperCase()=="Y"){
+      alert("You are special!!! :)")
+      userpassword += special
+    }
 
 }//**closing function
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 

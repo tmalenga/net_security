@@ -27,16 +27,17 @@ function generatePassword(){
    }
    else if(password_length < 8 || password_length > 128){
      alert("Your password does not meet the length criteria - please try again")
-     lengthcheck= false
-   }
+     lengthcheck= false     
+    }
+   
    else{
-     alert("Your pw meets the length criteria being " + password_length + " long")
+     alert("Your pw meets the length criteria being " + password_length + " words long")
      lengthcheck=true
    }
   }
   //Prompt to ask the user if they want to include uppercase letters and save the response to a variable, same for to ln 69
   uppercasechoice = prompt("Do you want uppercase letters?: ")
-    if (uppercasechoice.toUpperCase()=="NO" || uppercasechoice.toUpperCase()=="N"){
+    if (uppercasechoice.toUpperCase()=="NO" || uppercasechoice.toUpperCase()=="N" || uppercasechoice==null){
       alert("You have chosen no upper case letters")
     }
     else if(uppercasechoice.toUpperCase()=="YES" || uppercasechoice.toUpperCase()=="Y"){
@@ -44,7 +45,7 @@ function generatePassword(){
       userpassword += uppercasletter
     }
   lowercasechoice = prompt("Do you want lowerrcase letters?: ")
-    if (lowercasechoice.toUpperCase()=="NO" || lowercasechoice.toUpperCase()=="N" || lowercasechoice == null){
+    if (lowercasechoice.toUpperCase()=="NO" || lowercasechoice.toUpperCase()=="N" || lowercasechoice==null){
       alert("You have chosen no lower case letters")
     }
     else if(lowercasechoice.toUpperCase()=="YES" || lowercasechoice.toUpperCase()=="Y"){
@@ -52,7 +53,7 @@ function generatePassword(){
       userpassword += letters
     }
   numbers = prompt("Do you want to include numbers?: ")
-    if (numbers.toUpperCase()=="NO" || numbers.toUpperCase()=="N"){
+    if (numbers.toUpperCase()=="NO" || numbers.toUpperCase()=="N" || numbers==null){
       alert("You have chosen no numbers")
     }
     else if(numbers.toUpperCase()=="YES" || numbers.toUpperCase()=="Y"){
@@ -60,13 +61,20 @@ function generatePassword(){
       userpassword += usernumbers
     }
   specialchars = prompt("Do you want to include special characters?: ")
-    if (specialchars.toUpperCase()=="NO" || specialchars.toUpperCase()=="N"){
+    if (specialchars.toUpperCase()=="NO" || specialchars.toUpperCase()=="N"|| specialchars==null){
       alert("You have chosen no special people!!")
     }
     else if(specialchars.toUpperCase()=="YES" || specialchars.toUpperCase()=="Y"){
       alert("You are special!!! :)")
       userpassword += special
     }
+    //for loop that runs for the length of the pw selected by user, adding a new character to the final pw based on parameters selected to incl above 
+    for(let i =0; i<password_length; i++ ){
+      final_password += userpassword[Math.floor(Math.random()* userpassword.length)]
+      console.log(final_password)
+  
+    } 
+    return final_password
 
 }//**closing function
 
